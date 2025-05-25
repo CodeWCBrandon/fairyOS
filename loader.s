@@ -13,7 +13,7 @@
 
 
 loader:
-    mov $kernal_stack, %esp
+    mov $kernel_stack, %esp
     push %eax
     push %ebx
     call kernelMain
@@ -24,5 +24,5 @@ _hang:
     jmp _hang
 
 .section .bss
-    .space 2*1024*1024 # 2MiB spacing for stack pointer
+    .space 2*1024*1024; # 2MiB spacing for stack pointer
     kernel_stack:
