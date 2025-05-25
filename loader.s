@@ -1,4 +1,4 @@
-.set MAGIC_NUMBER, 0x1badb002 ; magic number for GRUB
+.set MAGIC_NUMBER, 0x1badb002 # magic number for GRUB
 .set FLAGS, (1 << 0 | 1 << 1)
 .set CHECKSUM, -(MAGIC_NUMBER + FLAGS)
 
@@ -24,5 +24,5 @@ _hang:
     jmp _hang
 
 .section .bss
-    .space 2*1024*1024 ; 2MiB spacing for stack pointer
+    .space 2*1024*1024 # 2MiB spacing for stack pointer
     kernel_stack:
