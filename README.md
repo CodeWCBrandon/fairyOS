@@ -39,7 +39,7 @@ Fairy OS is a next-gen OS project designed from the ground up to:
 > ⚠️ Work in progress. Expect rapid changes, experiments, and breaking builds.
 
 Current progress:
-- [ ] basic kernel
+- [ ] Basic kernel
 - [ ] Minimal shell interface
 - [ ] AI runtime module integration
 - [ ] File system and memory management
