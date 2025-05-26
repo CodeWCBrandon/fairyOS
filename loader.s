@@ -3,6 +3,7 @@
 .set CHECKSUM, -(MAGIC_NUMBER + FLAGS)
 
 .section .multiboot
+    .align 4
     .long MAGIC_NUMBER
     .long FLAGS
     .long CHECKSUM

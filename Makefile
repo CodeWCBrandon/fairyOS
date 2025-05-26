@@ -2,7 +2,7 @@ GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-excep
 ASMPARAMS = --32
 LDPARAMS = -melf_i386
 
-objects = kernel.o loader.o
+objects = loader.o kernel.o
 
 %.o : %.cpp
 	g++ $(GPPPARAMS) -o $@ -c $<
@@ -17,4 +17,4 @@ install: mykernel.bin
 	sudo cp $< /boot/mykernel.bin
 
 clear:
-	rm -rf $(objects)
+	rm -rf $(objects) mykernel.bin
