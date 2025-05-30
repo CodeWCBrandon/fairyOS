@@ -11,9 +11,9 @@ SECTIONS
     {
         *(.multiboot)
         *(.text*)
+        *(.rodata)
     }
 
-    .rodata : { *(.rodata*) } 
     .data :
     {
         start_ctors = .;
@@ -21,7 +21,7 @@ SECTIONS
         KEEP(*(SORT_BY_INIT_PRIORITY( .init_array.* )));
         end_ctors = .;
 
-        *(.data*)
+        *(.data)
     }
 
     .bss :
