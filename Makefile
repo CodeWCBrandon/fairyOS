@@ -10,11 +10,24 @@ objects = loader.o kernel.o
 %.o : %.s
 	as $(ASMPARAMS) -o $@ $<
 
-mykernel.bin: linker.ld $(objects)
+sentinelOS.bin: linker.ld $(objects)
 	ld $(LDPARAMS) -T $< -o $@ $(objects)
 
-install: mykernel.bin
-	sudo cp $< /boot/mykernel.bin
+install: sentinelOS.bin
+	sudo cp $< /boot/sentinelOS.bin
+
+sentinelOS.iso : sentinelOS.bin
+	mkdir iso
+	mkdir iso/boot
+	mkdir iso/boot/grub
+	cp $< iso/boot
+	echo 'set timeout=0' >> iso/boot/grub/grub.cfg
+	echo 'set default=0' >> iso/boot/grub/grub.cfg
+	echo '' >> iso/boot/grub/grub.cfg
+	echo 'menuentry "sentinel OS" {' >> iso/boot/grub/grub.cfg
+	echo '	multiboot /boot/sentinelOS.bin' >> iso/boot/grub/grub.cfg
+	echo '	boot' >> iso/boot/grub/grub.cfg
+	echo '}' >> iso/boot/grub/grub.cfg
 
 clear:
-	rm -rf $(objects) mykernel.bin
+	rm -rf $(objects) sentinelOS.bin
