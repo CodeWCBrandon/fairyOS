@@ -1,4 +1,4 @@
-# 🧚 Sentinel OS
+# 🛡️ Sentinel OS
 
 **Sentinel OS** is an experimental operating system that integrates **AI capabilities** at its core — aiming to blur the boundary between system software and intelligent computing.
 
