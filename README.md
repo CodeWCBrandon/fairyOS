@@ -1,12 +1,12 @@
-# 🧚 Fairy OS
+# 🧚 Sentinel OS
 
-**Fairy OS** is an experimental operating system that integrates **AI capabilities** at its core — aiming to blur the boundary between system software and intelligent computing.
+**Sentinel OS** is an experimental operating system that integrates **AI capabilities** at its core — aiming to blur the boundary between system software and intelligent computing.
 
 ---
 
 ## 🌟 Overview
 
-Fairy OS is a next-gen OS project designed from the ground up to:
+Sentinel OS is a next-gen OS project designed from the ground up to:
 - Provide native support for **AI-enhanced user experiences**
 - Explore how artificial intelligence can manage, optimize, and assist with system operations
 - Serve as a platform for experimenting with intelligent task scheduling, adaptive UI, and contextual automation
