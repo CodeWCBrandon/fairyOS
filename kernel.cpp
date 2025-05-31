@@ -30,7 +30,7 @@ extern "C" void callConstructors()
 
 extern "C" void kernelMain(void* multiboot_structure, unsigned int magicNumber)
 {
-    printf("Hello world lfjkdajkdfaj");
+    printf("Hello world");
 
     while(true);
 }
