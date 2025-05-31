@@ -1,6 +1,15 @@
+void clear()
+{
+    unsigned short* videoMemory = (unsigned short*) 0xb8000;
+    for(int i = 0; i < 80 * 25; ++i)
+    {
+        videoMemory[i] = (0x0F << 8) | ' ';
+    }
+}
 
 void printf(char* str)
 {
+    clear();
     unsigned short* videoMemory = (unsigned short*) 0xb8000;
     for(int i = 0; str[i] != '\0'; ++i)
     {
@@ -21,7 +30,7 @@ extern "C" void callConstructors()
 
 extern "C" void kernelMain(void* multiboot_structure, unsigned int magicNumber)
 {
-    printf("Hello world");
+    printf("Hello world lfjkdajkdfaj");
 
     while(true);
 }
