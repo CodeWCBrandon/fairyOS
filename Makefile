@@ -28,6 +28,12 @@ sentinelOS.iso : sentinelOS.bin
 	echo '	multiboot /boot/sentinelOS.bin' >> iso/boot/grub/grub.cfg
 	echo '	boot' >> iso/boot/grub/grub.cfg
 	echo '}' >> iso/boot/grub/grub.cfg
+	grub-mkrescue --output=$@ iso
+	rm -rf iso
 
 clear:
-	rm -rf $(objects) sentinelOS.bin
+	rm -rf $(objects) sentinelOS.bin sentinelOS.iso
+
+run: 
+	(killall VirtualBox)
+	VBoxManage startvm "SentinelOS" &
