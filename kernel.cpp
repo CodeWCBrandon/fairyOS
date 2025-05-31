@@ -1,7 +1,9 @@
+#include "types.h"
+
 void clear()
 {
-    unsigned short* videoMemory = (unsigned short*) 0xb8000;
-    for(int i = 0; i < 80 * 25; ++i)
+    uint16_t* videoMemory = (uint16_t*) 0xb8000;
+    for(int32_t i = 0; i < 80 * 25; ++i)
     {
         videoMemory[i] = (0x0F << 8) | ' ';
     }
@@ -10,8 +12,8 @@ void clear()
 void printf(char* str)
 {
     clear();
-    unsigned short* videoMemory = (unsigned short*) 0xb8000;
-    for(int i = 0; str[i] != '\0'; ++i)
+    uint16_t* videoMemory = (uint16_t*) 0xb8000;
+    for(int32_t i = 0; str[i] != '\0'; ++i)
     {
         videoMemory[i] = (videoMemory[i] & 0xFF00) | str[i];
     }
@@ -28,7 +30,7 @@ extern "C" void callConstructors()
     }
 }
 
-extern "C" void kernelMain(void* multiboot_structure, unsigned int magicNumber)
+extern "C" void kernelMain(void* multiboot_structure, uint32_t magicNumber)
 {
     printf("Hello world");
 
