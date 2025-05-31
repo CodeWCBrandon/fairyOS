@@ -31,9 +31,10 @@ sentinelOS.iso : sentinelOS.bin
 	grub-mkrescue --output=$@ iso
 	rm -rf iso
 
+run: sentinelOS.iso
+	(killall VirtualBoxVM && sleep 1) || true
+	VirtualBoxVM --startvm "SentinelOS" & 
+
+.PHONY: clear
 clear:
 	rm -rf $(objects) sentinelOS.bin sentinelOS.iso
-
-run: 
-	(killall VirtualBox)
-	VBoxManage startvm "SentinelOS" &
