@@ -8,8 +8,9 @@
     .long CHECKSUM
 
 .section .text
-    .extern kernelMain
-    .global loader
+.extern kernelMain
+.extern callConstructors
+.global loader
 
 
 loader:
@@ -24,5 +25,5 @@ _hang:
     jmp _hang
 
 .section .bss
-    .space 2*1024*1024; # 2MiB spacing for stack pointer
-    kernel_stack:
+.space 2*1024*1024; # 2MiB spacing for stack pointer
+kernel_stack:
