@@ -1,5 +1,6 @@
 #ifndef __GDT_H
 #define __GDT_H
+
 #include "types.h"
 
     class GlobalDescriptorTable
@@ -33,8 +34,8 @@
             GlobalDescriptorTable();
             ~GlobalDescriptorTable();
 
-            uint16_t codeSegmentSelector(); // offset code segment
-            uint16_t dataSegmentSelector(); // offset data segment
+            uint16_t CodeSegmentSelector(); // offset code segment
+            uint16_t DataSegmentSelector(); // offset data segment
     };
 
 #endif
