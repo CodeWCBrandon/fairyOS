@@ -24,6 +24,17 @@
                     uint32_t Limit();
 
             } __attribute__((packed));
+
+            SegmentDescriptor nullSegmentSelector; // empty segment for template
+            SegmentDescriptor unusedSegmentSelector; 
+            SegmentDescriptor codeSegmentSelector; // code segment
+            SegmentDescriptor dataSegmentSelector; // data segment
+        
+            GlobalDescriptorTable();
+            ~GlobalDescriptorTable();
+
+            uint16_t codeSegmentSelector(); // offset code segment
+            uint16_t dataSegmentSelector(); // offset data segment
     };
 
 #endif
